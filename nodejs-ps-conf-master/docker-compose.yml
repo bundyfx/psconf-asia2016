@@ -1,0 +1,13 @@
+version: "2"
+services:
+  db:
+    image: mongo
+    expose:
+      - "27017"
+  web:
+    build: .
+    command: bash -c "npm run insertdata && npm start"
+    ports:
+      - "5000:5000"
+    links:
+      - db:database

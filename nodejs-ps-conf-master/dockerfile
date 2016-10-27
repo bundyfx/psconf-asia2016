@@ -1,0 +1,15 @@
+# Node.js
+FROM nodejs
+
+#give our image a label
+LABEL Description="BooksIRead" Vendor="bundyfx" Version="1.0.0"
+
+# make the src folder available in the docker image
+ADD . /src
+WORKDIR /src
+
+# install the dependencies from the package.json file
+RUN npm install
+
+# make port 5000 available outside of the image
+EXPOSE 5000

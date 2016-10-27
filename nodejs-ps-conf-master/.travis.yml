@@ -1,0 +1,19 @@
+language: node_js
+
+sudo: required
+
+services:
+  - docker
+
+env:
+  DOCKER_COMPOSE_VERSION: 1.4.2
+
+install: "npm install"
+
+before_script:
+  - npm install -g gulp
+  
+script: 
+  - gulp style
+  - gulp inject
+  - docker-compose up -d && docker ps -a
