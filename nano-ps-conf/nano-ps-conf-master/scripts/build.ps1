@@ -1,7 +1,3 @@
-#Presentation ISE MODE
-#share internal internet access if on wifi
-#disable and re-enable sharing
-
 break
 
 
